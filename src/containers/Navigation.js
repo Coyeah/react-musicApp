@@ -25,7 +25,7 @@ class Navigation extends Component {
   };
 
   static defaultProps = {
-    classPrefix: 'music',
+    classPrefix: 'music-navigation',
     navIndex: 1,
   };
 
@@ -37,11 +37,11 @@ class Navigation extends Component {
     const { classPrefix } = this.props;
 
     const cx = classnames({
-      [`${classPrefix}-navigation`]: true,
+      [`${classPrefix}`]: true,
     });
 
     const cxIcon = classnames({
-      [`${classPrefix}-navigation-icon`]: true,
+      [`${classPrefix}-icon`]: true,
     });
 
     let iconArr = [music, disc, video];
