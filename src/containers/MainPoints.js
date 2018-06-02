@@ -7,6 +7,8 @@ import * as ItemsAcitons from '../actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import MyList from '../components/MyList';
+
 class MainPoints extends Component {
   static propTypes = {
     classPrefix: PropTypes.string,
@@ -29,7 +31,9 @@ class MainPoints extends Component {
 
     return (
       <div className={cx}>
-      
+        <ul>
+          <MyList />
+        </ul>
       </div>
     );
   }

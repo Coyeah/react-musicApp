@@ -14,7 +14,7 @@ $theme-color: #c20c0c;
     height: 60px;
     justify-content: space-between;
     box-sizing: border-box;
-    box-shadow: 0 2px 2px #eee;
+    box-shadow: 0 3px 3px #ddd;
     z-index: 2;
 
     &-icon {
@@ -31,5 +31,52 @@ $theme-color: #c20c0c;
     background-color: #fff;
     box-sizing: border-box;
     z-index: 1;
+    position: relative;
+    overflow: hidden;
+
+    & ul {
+      margin: 0;
+      padding: 0;
+      width: 300%;
+      height: 100%;
+      list-style-type: none;
+      float: left;
+      position: absolute;
+      left: 0px;
+      top: 0;
+      transition: all 1s;
+    }
+
+    &-mylist {
+      width: 33.33%;
+      height: 100%;
+      background-color: #efefef;
+
+      &-item {
+        display: flex;
+        justify-content: flex-start;
+
+        &-icon {
+          height: 60px;
+          width: 60px;
+          padding: 20px;
+          box-sizing: border-box; 
+        }
+
+        &-text {
+          width: 100%;
+          margin-left: 10px;
+          line-height: 60px;
+          font-size: 1rem;
+          border-bottom: 0.8px solid #ddd;
+          box-sizing: border-box;
+
+          & span {
+            color: #888;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
   }
 }
