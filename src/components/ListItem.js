@@ -52,6 +52,28 @@ class ListItem extends Component {
           </div>
         );
       }
+      case "COLLECTLIST": {
+        const cxItemPict = `${classPrefix}-pict`;
+
+        const cxItemGroup = `${classPrefix}-group`;
+
+        const cxItemGroupText = `${cxItemGroup}-text`;
+
+        return (
+          <div>
+            <div className={classPrefix}>
+              <img className={cxItemPict} src={info.image} />
+              <div className={cxItemGroup}>
+                <div className={cxItemGroupText}>
+                  {info.title}
+                  <p>{info.children.length}首 BY {info.author}</p>
+                </div>
+                <img className={cxItemIcon} src={more} />
+              </div>
+            </div>
+          </div>
+        );
+      }
     }
   }
 }

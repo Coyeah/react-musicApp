@@ -11,7 +11,6 @@ import ListItem from './ListItem';
 
 import down from '../image/myList/icon/down.png';
 import set from '../image/myList/icon/set.png';
-import more from '../image/myList/icon/more.png';
 
 class MyList extends Component {
   static propTypes = {
@@ -85,15 +84,42 @@ class MyList extends Component {
     }
   }
 
-  getListHeader(keyWord, amount) {
+  getListHeader(type, amount) {
     const { classPrefix } = this.props;
     const cx = `${classPrefix}-header`;
     const cxIcon = `${cx}-icon`;
     const cxText = `${cx}-text`;
 
+    let keyWord = "";
+    let onClickEvent = null;
+    let style = {};
+
+    switch (type) {
+      case "SONGLIST": {
+        keyWord = "创建的歌单";
+        onClickEvent = this.props.songListChange;
+        if (!this.props.songListOpen) {
+          style = {
+            transform: "rotate(-90deg)",
+          }
+        }
+        break;
+      }
+      case "COLLECTLIST": {
+        keyWord = "收藏的歌单";
+        onClickEvent = this.props.collectListChange;
+        if (!this.props.collectListOpen) {
+          style = {
+            transform: "rotate(-90deg)",
+          }
+        }
+        break;
+      }
+    }
+
     return (
       <div className={cx}>
-        <img className={cxIcon} src={down} />
+        <img className={cxIcon} style={style} onClick={onClickEvent} src={down} />
         <div className={cxText}>{keyWord} ({amount})</div>
         <img className={cxIcon} src={set} />
       </div>
@@ -106,10 +132,10 @@ class MyList extends Component {
     return (
       <li className={classPrefix} >
         {this.getLocalListItem()}
-        {this.getListHeader("创建的歌单", songList.length)}
-        {this.getSongListItem()}
-        {this.getListHeader("收藏的歌单", collectList.length)}
-        {this.getCollectListItem()}
+        {this.getListHeader("SONGLIST", songList.length)}
+        {this.props.songListOpen && this.getSongListItem()}
+        {this.getListHeader("COLLECTLIST", collectList.length)}
+        {this.props.collectListOpen && this.getCollectListItem()}
       </li>
     );
   }

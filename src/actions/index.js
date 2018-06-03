@@ -12,3 +12,15 @@ export const panelChange = newPanelText => {
     newPanelText
   }
 }
+
+export const songListChange = () => {
+  return {
+    type: "SONGLIST_CHANGE",
+  }
+}
+
+export const collectListChange = () => {
+  return {
+    type: "COLLECTLIST_CHANGE",
+  }
+}

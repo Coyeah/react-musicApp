@@ -55,6 +55,34 @@ export const songList = [
   },
 ];
 
-export const collectList = [
+import collectlist01 from '../image/mylist/pict/collectlist01.jpg';
+import collectlist02 from '../image/mylist/pict/collectlist02.jpg';
+import collectlist03 from '../image/mylist/pict/collectlist03.jpg';
+import collectlist04 from '../image/mylist/pict/collectlist04.jpg';
 
+export const collectList = [
+  {
+    image: collectlist01,
+    title: "别具韵味的粤语歌曲",
+    author: "清欢渡",
+    children: [],
+  },
+  {
+    image: collectlist02,
+    title: "适合冥想时听的自然纯音",
+    author: "风影",
+    children: [],
+  },
+  {
+    image: collectlist03,
+    title: "火力全开。工作随身听",
+    author: "Beau7℃",
+    children: [],
+  },
+  {
+    image: collectlist04,
+    title: "盘点:20部科幻美剧原声合集",
+    author: "★、╰︶",
+    children: [],
+  }
 ];
