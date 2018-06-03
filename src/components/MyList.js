@@ -9,8 +9,9 @@ import { collectList } from '../constants/myList';
 
 import ListItem from './ListItem';
 
-import down from '../image/myList/down.png';
-import set from '../image/myList/set.png';
+import down from '../image/myList/icon/down.png';
+import set from '../image/myList/icon/set.png';
+import more from '../image/myList/icon/more.png';
 
 class MyList extends Component {
   static propTypes = {
@@ -33,7 +34,7 @@ class MyList extends Component {
       localList.map((value, index) => {
         return (
           <ListItem
-            listType="SIMPLE"
+            listType="LOCALLIST"
             classPrefix={cxItem}
             info={value}
           />
@@ -46,24 +47,45 @@ class MyList extends Component {
     const { classPrefix } = this.props;
     const cxItem = `${classPrefix}-item`;
 
-    return (
-      songList.map((value, index) => {
-        return (
-          <ListItem
-            listType="COMPLEX"
-            classPrefix={cxItem}
-            info={value}
-          />
-        );
-      })
-    ); 
+    if (songList.length != 0) {
+
+      return (
+        songList.map((value, index) => {
+          return (
+            <ListItem
+              listType="SONGLIST"
+              classPrefix={cxItem}
+              info={value}
+            />
+          );
+        })
+      ); 
+
+    }
   }
 
   getCollectListItem() {
+    const { classPrefix } = this.props;
+    const cxItem = `${classPrefix}-item`;
 
+    if (collectList.length != 0) {
+
+      return (
+        collectList.map((value, index) => {
+          return (
+            <ListItem
+              listType="COLLECTLIST"
+              classPrefix={cxItem}
+              info={value}
+            />
+          );
+        })
+      );
+
+    }
   }
 
-  getListHeader(keyWord) {
+  getListHeader(keyWord, amount) {
     const { classPrefix } = this.props;
     const cx = `${classPrefix}-header`;
     const cxIcon = `${cx}-icon`;
@@ -72,7 +94,7 @@ class MyList extends Component {
     return (
       <div className={cx}>
         <img className={cxIcon} src={down} />
-        <div className={cxText}>{keyWord} (0)</div>
+        <div className={cxText}>{keyWord} ({amount})</div>
         <img className={cxIcon} src={set} />
       </div>
     );
@@ -84,8 +106,10 @@ class MyList extends Component {
     return (
       <li className={classPrefix} >
         {this.getLocalListItem()}
-        {this.getListHeader("创建的歌单")}
-        {this.getListHeader("收藏的歌单")}
+        {this.getListHeader("创建的歌单", songList.length)}
+        {this.getSongListItem()}
+        {this.getListHeader("收藏的歌单", collectList.length)}
+        {this.getCollectListItem()}
       </li>
     );
   }

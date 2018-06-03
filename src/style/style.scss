@@ -50,7 +50,7 @@ $theme-color: #c20c0c;
     &-mylist {
       width: 33.33%;
       height: 100%;
-      background-color: #efefef;
+      background-color: #f1f1f1;
 
       &-item {
         display: flex;
@@ -76,12 +76,42 @@ $theme-color: #c20c0c;
             font-size: 0.9rem;
           }
         }
+
+        &-pict {
+          height: 60px;
+          width: 60px;
+          padding: 5px;
+          border-radius: 10px;
+          box-sizing: border-box; 
+        }
+
+        &-group {
+          width: 100%;
+          margin-left: 10px;
+          height: 60px;
+          border-bottom: 0.8px solid #ddd;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: flex-start;
+
+          &-text {
+            width: 100%;
+            line-height: 10px;
+            padding-top: 15px;
+            font-size: 1rem;
+
+            & p {
+              font-size: 0.9rem;
+              color:#888;
+            }
+          }
+        }
       }
 
       &-header {
         display: flex;
         justify-content: flex-start;
-        background-color: #ddd;
+        background-color: #e8e8e8;
         padding: 3px 0;
 
         &-icon {
