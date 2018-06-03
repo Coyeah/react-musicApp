@@ -33,6 +33,10 @@ class Navigation extends Component {
     super(props);
   }
 
+  componentDidMount() {
+
+  }
+
   render() {
     const { classPrefix } = this.props;
 
@@ -47,9 +51,7 @@ class Navigation extends Component {
     let iconArr = [music, disc, video];
     let iconSelected = [music_selected, disc_selected, video_selected];
     iconArr[this.props.navIndex] = iconSelected[this.props.navIndex];
-
-    console.log(this.props);
-
+    
     return (
       <div className={cx}>
       <img className={cxIcon} src={list} onClick={() => this.props.actions.panelChange("list")} />

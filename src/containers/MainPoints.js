@@ -29,9 +29,15 @@ class MainPoints extends Component {
       [`${classPrefix}`]: true,
     });
 
+    console.log(this.props.navIndex);
+    let leftValue = -1 * window.screen.width * this.props.navIndex;
+    let pointStyle = {
+      left: leftValue,
+    }
+
     return (
       <div className={cx}>
-        <ul>
+        <ul id="MainPoints" style={pointStyle}>
           <MyList />
         </ul>
       </div>
@@ -39,4 +45,18 @@ class MainPoints extends Component {
   }
 }
 
-export default MainPoints;
+const mapStateToProps = state => ({
+  navIndex: state.navIndex.navIndex,
+  navPanel: state.navIndex.navPanel,
+});
+
+const mapDispatchToProps = dispatch => ({
+  // actions: bindActionCreators(ItemsActions, dispatch),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MainPoints);
+
+
