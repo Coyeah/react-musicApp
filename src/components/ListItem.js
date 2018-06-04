@@ -12,6 +12,10 @@ class ListItem extends Component {
 
   static defaultProps = {
     classPrefix: "music-points-mylist-item",
+  };
+
+  constructor(props) {
+    super(props);
   }
 
   render() {

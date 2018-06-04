@@ -24,3 +24,10 @@ export const collectListChange = () => {
     type: "COLLECTLIST_CHANGE",
   }
 }
+
+export const platformIndexChange = newPlatformIndex => {
+  return {
+    type: "PLATFORM_CHANGE",
+    newPlatformIndex
+  }
+}

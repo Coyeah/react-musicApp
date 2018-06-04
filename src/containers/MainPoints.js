@@ -8,6 +8,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import MyList from '../components/MyList';
+import Platform from '../components/Platform';
 
 class MainPoints extends Component {
   static propTypes = {
@@ -43,6 +44,10 @@ class MainPoints extends Component {
             songListChange={this.props.actions.songListChange}
             collectListChange={this.props.actions.collectListChange}
           />
+          <Platform
+            platformIndex={this.props.platformIndex}
+            platformIndexChange={this.props.actions.platformIndexChange}
+          />
         </ul>
       </div>
     );
@@ -54,6 +59,7 @@ const mapStateToProps = state => ({
   navPanel: state.navIndex.navPanel,
   songListOpen: state.myList.songListOpen,
   collectListOpen: state.myList.collectListOpen,
+  platformIndex: state.platform.platformIndex,
 });
 
 const mapDispatchToProps = dispatch => ({

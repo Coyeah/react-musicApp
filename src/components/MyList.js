@@ -120,7 +120,7 @@ class MyList extends Component {
     return (
       <div className={cx}>
         <img className={cxIcon} style={style} onClick={onClickEvent} src={down} />
-        <div className={cxText}>{keyWord} ({amount})</div>
+        <div className={cxText} onClick={onClickEvent} >{keyWord} ({amount})</div>
         <img className={cxIcon} src={set} />
       </div>
     );
