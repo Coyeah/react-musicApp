@@ -191,11 +191,10 @@ $theme-color: #c20c0c;
 
     &-slideshow { 
       width: 100%;
-      height: 224px;
       overflow: hidden;
       position: relative;
       
-      &>ul {
+      &-image {
         margin: 0;
         padding: 0;
         width: 500%;
@@ -217,6 +216,26 @@ $theme-color: #c20c0c;
           &>img {
             width: 100%;
           }
+        }
+      }
+
+      &-point {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        padding: 0 30%;
+        box-sizing: border-box;
+        list-style-type: none;
+        float: left;
+        display: flex;
+        justify-content: space-between;
+
+        &>li {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: #ddd;
+          float: left;
         }
       }
     }
