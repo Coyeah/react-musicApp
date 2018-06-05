@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 
 class SlideShow extends Component {
   static propTypes = {
-    classPrefix: PropTypes.string
+    classPrefix: PropTypes.string,
+    upperLimit: PropTypes.number,
   };
 
   static defaultProps = {
@@ -58,24 +59,28 @@ class SlideShow extends Component {
   }
 
   slideTouchStart(e) {
-    this.setState({
-      mouseX: e.touches[0].clientX,
-      isTouch: true,
-    });
+    if (!this.state.isTouch) {
+      this.setState({
+        mouseX: this.state.imageIndex * window.screen.width + e.touches[0].clientX,
+        isTouch: true,
+      });
+    }
   }
 
   slideTouchMove(e) {
-    this.setState({
-      mouseLeft: e.touches[0].clientX - this.state.mouseX,
-    });
+    if (this.state.isTouch) {
+      this.setState({
+        mouseLeft: this.state.imageIndex * window.screen.width + e.touches[0].clientX - this.state.mouseX,
+      });
+    }
   }
 
   slideTouchEnd() {
     console.log(this.state.mouseLeft);
     let imageIndex = this.state.imageIndex;
-    if (this.state.mouseLeft < (-1 * window.screen.width * 0.5)) {
+    if (this.state.mouseLeft < (-1 * window.screen.width * 0.5) && imageIndex < (this.props.upperLimit - 1)) {
       imageIndex++
-    } else if (this.state.mouseLeft > (window.screen.width * 0.5)) {
+    } else if (this.state.mouseLeft > (window.screen.width * 0.5) && imageIndex > 0) {
       imageIndex--;
     }
     this.setState({
@@ -98,7 +103,7 @@ class SlideShow extends Component {
     let styleUl = null;
     if (this.state.isTouch) {
       styleUl = {
-        left: this.state.mouseLeft,
+        left: this.state.mouseLeft - this.state.imageIndex * window.screen.width,
       };
     } else {
       styleUl = {
