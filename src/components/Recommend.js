@@ -4,8 +4,11 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 import SlideShow from './SlideShow';
+import SongBlock from './SongBlock';
 
 import { recommendPoster } from '../constants/posterList';
+
+import { recommendSong, newestSong, anchorRadio } from '../constants/songBlockList';
 
 import insideNav_1 from '../image/platform/remmcond/icon/fm.png';
 import insideNav_2 from '../image/platform/remmcond/icon/calendar.png';
@@ -47,13 +50,46 @@ class Recommend extends Component {
     );
   }
 
-  getSongList(keyWord) {
+  getSongList(key) {
     const { classPrefix } = this.props;
     const cxSongList = `${classPrefix}-songlist`;
+    const cxListTitle = `${cxSongList}-title`;
+    const cxListBody = `${cxSongList}-body`;
+
+    let list = null;
+    let keyWord = null;
+    switch (key) {
+      case "recommendSong": {
+        list = recommendSong;
+        keyWord = "推荐歌单";
+        break;
+      }
+      case "newestSong": {
+        list = newestSong;
+        keyWord = "最新音乐";
+        break;
+      }
+      case "anchorRadio": {
+        list = anchorRadio;
+        keyWord = "主播电台";
+        break;
+      }
+    }
 
     return (
       <div className={cxSongList}>
-        <div>{keyWord}&nbsp;&gt;</div>
+        <div className={cxListTitle}>{keyWord}&nbsp;&gt;</div>
+        <div className={cxListBody}>
+          {list.map((value, index) => {
+            return (
+              <SongBlock 
+                image={value.image}
+                listen={value.listen}
+                title={value.title}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }
@@ -69,9 +105,9 @@ class Recommend extends Component {
           {this.getImageList()}
         </SlideShow>
         {this.getInsideNav()}
-        {this.getSongList("推荐歌单")}
-        {this.getSongList("最新音乐")}
-        {this.getSongList("主播电台")}
+        {this.getSongList("recommendSong")}
+        {this.getSongList("newestSong")}
+        {this.getSongList("anchorRadio")}
       </li>
     );
   }
