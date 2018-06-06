@@ -1,17 +1,21 @@
 # 使用React制作的音乐播放器（模仿网易云音乐）
 
-*[持续更新中...]*
+**[持续更新中...]**
 
 一直想模仿一个App，更新了一次网易云觉得好好看，于是就手写一个。
 
 > 关于我~
+> 
 > 博客：[Coyeah](http://www.coyeah.top)
+> 
 > Github：[Coyeah](https://github.com/Coyeah)
+> 
 > 知乎：[Coyeah](https://www.zhihu.com/people/coyeah-21)
 
 ## 源码：
 
 源代码地址：[GitHub](https://github.com/Coyeah/react-musicApp)
+
 欢迎大家star和follow
 
 ## 效果演示：
