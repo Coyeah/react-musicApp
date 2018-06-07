@@ -11,7 +11,7 @@ class SongBlock extends Component {
   };
 
   static defaultProps = {
-    classPrefix: "music-points-platform-recommend-songlist-songblock",
+    classPrefix: "music-points-songblock",
   };
 
   constructor(props) {

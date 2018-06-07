@@ -76,7 +76,6 @@ class SlideShow extends Component {
   }
 
   slideTouchEnd() {
-    console.log(this.state.mouseLeft);
     let imageIndex = this.state.imageIndex;
     if (this.state.mouseLeft < (-1 * window.screen.width * 0.5) && imageIndex < (this.props.upperLimit - 1)) {
       imageIndex++
