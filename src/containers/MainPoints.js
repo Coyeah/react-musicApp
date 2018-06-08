@@ -25,10 +25,9 @@ class MainPoints extends Component {
 
   render() {
     const { classPrefix } = this.props;
-
-    const cx = classnames({
-      [`${classPrefix}`]: true,
-    });
+    const style = {
+      height: window.screen.height - 120,
+    }
 
     let leftValue = -1 * window.screen.width * this.props.navIndex;
     let pointStyle = {
@@ -36,7 +35,7 @@ class MainPoints extends Component {
     }
 
     return (
-      <div className={cx}>
+      <div className={classPrefix} style={style}>
         <ul id="MainPoints" style={pointStyle}>
           <MyList
             songListOpen={this.props.songListOpen}

@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
+import PostItem from './PostItem';
+
 class Friendship extends Component {
   static propTypes = {
     classPrefix: PropTypes.string,
@@ -21,7 +23,7 @@ class Friendship extends Component {
 
     return (
       <li className={classPrefix}>
-        
+        <PostItem />
       </li>
     );
   }

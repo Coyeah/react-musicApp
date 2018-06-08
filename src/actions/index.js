@@ -31,3 +31,9 @@ export const platformIndexChange = newPlatformIndex => {
     newPlatformIndex
   }
 }
+
+export const playerChange = () => {
+  return {
+    type: "PLAYER_CHANGE",
+  }
+}

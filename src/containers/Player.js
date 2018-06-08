@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
+import * as ItemsActions from '../actions';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 import { playerMain } from '../constants/playerInfo';
 
 import play from '../image/play.png';
@@ -16,7 +20,6 @@ class Player extends Component {
 
   static defaultProps = {
     classPrefix: 'music-player',
-    navIndex: 1,
   };
 
   constructor(props) {
@@ -25,16 +28,18 @@ class Player extends Component {
 
   render() {
     const { classPrefix } = this.props;
-    const cxImage = `${classPrefix}-image`
-    const cxInfo = `${classPrefix}-info`
-    const cxPlay = `${classPrefix}-play`
-    const cxIcon = `${classPrefix}-icon`
+    const cxImage = `${classPrefix}-image`;
+    const cxInfo = `${classPrefix}-info`;
+    const cxPlay = `${classPrefix}-play`;
+    const cxIcon = `${classPrefix}-icon`;
+
+    const playIcon = this.props.isPlay ? stop : play;
 
     return (
       <div className={classPrefix}>
         <img className={cxImage} src={playerMain.image} />
-        <div className={cxInfo}>{playerMain.name}<p>{playerMain.author}</p></div>
-        <img className={cxPlay} src={play} />
+        <div className={cxInfo} >{playerMain.name}<p>{playerMain.author}</p></div>
+        <img className={cxPlay} src={playIcon} onClick={() => this.props.actions.playerChange()} />
         <img className={cxIcon} src={playList} />
       </div>
     );
@@ -42,4 +47,15 @@ class Player extends Component {
 
 }
 
-export default Player;
+const mapStateToProps = state => ({
+  isPlay: state.player.isPlay,
+});
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(ItemsActions, dispatch),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Player);

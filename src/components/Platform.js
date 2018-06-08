@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 import Recommend from './Recommend'
+import Friendship from './Friendship'
 
 class Platform extends Component {
   static propTypes = {
@@ -56,6 +57,7 @@ class Platform extends Component {
         <div className={cxMain}>
           <ul style={style}>
             <Recommend />
+            <Friendship />
           </ul>
         </div>
       </li>

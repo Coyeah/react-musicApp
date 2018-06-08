@@ -5,10 +5,11 @@ $theme-color: #c20c0c;
 .#{$class-prefix} {
   height: 100%;
   display: flex;
-  justify: flex-start;
+  justify-content: space-between;
   flex-direction: column;
 
   &-navigation {
+    margin: 0;
     display: flex;
     width: 100%;
     height: 60px;
@@ -27,6 +28,7 @@ $theme-color: #c20c0c;
   }
 
   &-player {
+    margin: 0;
     display: flex;
     width: 100%;
     height: 60px;
@@ -62,7 +64,7 @@ $theme-color: #c20c0c;
       margin: 15px;
       width: 30px;
       height: 30px;
-      padding: 5px;
+      padding: 3px;
       border-radius: 50%;
       border: 2px solid #2c2c2c;
       box-sizing: border-box;
@@ -77,8 +79,8 @@ $theme-color: #c20c0c;
   }
 
   &-points {
+    margin: 0;
     width: 100%;
-    height: 100%;
     background-color: #fff;
     box-sizing: border-box;
     position: relative;
@@ -318,9 +320,68 @@ $theme-color: #c20c0c;
       }
       
       &-friendship {
+        margin: 0;
+        padding: 0;
+        width: 100%;
 
         &-postitem {
+          padding: 10px;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          box-sizing: border-box;
+          border-bottom: 0.8px solid #ddd;
 
+          &-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+
+          &-content {
+            padding-left: 10px;
+            width: 100%;
+            box-sizing: border-box;
+
+            &-info {
+              margin: 5px 0;
+              width: 100%;
+              height: 40px;
+              display: flex;
+              justify-content: space-between;
+              box-sizing: border-box;
+            }
+
+            &-focus {
+              margin: 7px 0;
+              width: 30%;
+              height: 26px;
+              border-radius: 40px;
+              background-color: $theme-color;
+              color: #fff;
+              font-size: 0.7rem;
+              text-align: center;
+              line-height: 26px;
+            }
+
+            &-text {
+              width: 100%;
+              font-size: 1rem;
+              word-break: break-all;
+              
+              & p {
+                margin: 0;
+                padding: 0;
+                color: #888;
+                font-size: 0.7rem;
+              }
+            }
+
+            &-image {
+              margin: 5px 0;
+              width: 100%;
+            }
+          }
         }
       }
     }
