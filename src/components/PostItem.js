@@ -20,9 +20,9 @@ class PostItem extends Component {
     const { classPrefix } = this.props;
 
     return (
-      <li className={classPrefix}>
+      <div className={classPrefix}>
         
-      </li>
+      </div>
     );
   }
 
