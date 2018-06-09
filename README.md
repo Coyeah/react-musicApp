@@ -18,6 +18,12 @@
 
 欢迎大家star和follow
 
+## 演示路径：
+
+[www.coyeah.top/musicApp](http://www.coyeah.top/musicApp/)
+
+请使用chrome浏览器点击*F12*~
+
 ## 效果演示：
 
 ![效果演示](https://github.com/Coyeah/react-musicApp/blob/master/resource/resource_01.gif)
@@ -30,8 +36,3 @@
 - [ ] 个人设置页面
 - [ ] 电台推荐页面
 - [ ] 全网搜索页面
-
-## 关于功能：
-
-- [x] 轮播图功能
-- [x] 页面平滑功能
