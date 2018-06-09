@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 
 import PostItem from './PostItem';
 
+import { postList } from '../constants/postList';
+
 class Friendship extends Component {
   static propTypes = {
     classPrefix: PropTypes.string,
@@ -16,6 +18,22 @@ class Friendship extends Component {
 
   constructor(props) {
     super(props);
+
+    this.getPostList = this.getPostList.bind(this);
+  }
+
+  getPostList() {
+    console.log(postList);
+
+    return (
+      postList.map((value, index) => {
+        return ( 
+          <PostItem
+            info={value}
+          />
+        );
+      })
+    );
   }
 
   render() {
@@ -23,7 +41,7 @@ class Friendship extends Component {
 
     return (
       <li className={classPrefix}>
-        <PostItem />
+        {this.getPostList()}
       </li>
     );
   }

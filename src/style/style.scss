@@ -381,6 +381,31 @@ $theme-color: #c20c0c;
               margin: 5px 0;
               width: 100%;
             }
+
+            &-social {
+              margin: 0;
+              padding: 0;
+              display: flex;
+              justify-content: space-between;
+              height: 20px;
+
+              & div {
+                display: flex;
+              }
+
+              & img {
+                width: 20px;
+                height: 20px;
+                box-sizing: border-box;
+                margin-right: 4px;
+              }
+
+              & span {
+                line-height: 20px;
+                color: #888;
+                font-size: 0.6rem;
+              }
+            }
           }
         }
       }
