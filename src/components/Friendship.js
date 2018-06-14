@@ -23,8 +23,6 @@ class Friendship extends Component {
   }
 
   getPostList() {
-    console.log(postList);
-
     return (
       postList.map((value, index) => {
         return ( 

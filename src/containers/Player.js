@@ -37,10 +37,14 @@ class Player extends Component {
 
     return (
       <div className={classPrefix}>
-        <img className={cxImage} src={playerMain.image} />
-        <div className={cxInfo} >{playerMain.name}<p>{playerMain.author}</p></div>
-        <img className={cxPlay} src={playIcon} onClick={() => this.props.actions.playerChange()} />
-        <img className={cxIcon} src={playList} />
+        <div>
+          <img className={cxImage} src={playerMain.image} />
+          <div className={cxInfo} >{playerMain.name}<p>{playerMain.author}</p></div>
+        </div>
+        <div>
+          <img className={cxPlay} src={playIcon} onClick={() => this.props.actions.playerChange()} />
+          <img className={cxIcon} src={playList} />
+        </div>
       </div>
     );
   }

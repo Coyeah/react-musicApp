@@ -6,6 +6,7 @@ import style from '../style/style.scss';
 import Navigation from './Navigation';
 import MainPoints from './MainPoints';
 import Player from './Player';
+import BioSet from './BioSet';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <Navigation />
         <MainPoints />
         <Player />
+        <BioSet />
       </div>
     );
   }

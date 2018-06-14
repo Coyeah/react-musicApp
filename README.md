@@ -22,7 +22,7 @@
 
 [www.coyeah.top/musicApp](http://www.coyeah.top/musicApp/)
 
-请使用chrome浏览器点击*F12*~
+请使用chrome浏览器点击*F12*~    
 
 ## 效果演示：
 
