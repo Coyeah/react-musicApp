@@ -20,7 +20,7 @@
 
 ## 演示路径：
 
-[www.coyeah.top/musicApp](http://www.coyeah.top/musicApp/)
+[www.coyeah.top/musicApp](http://www.coyeah.top/playroom/musicApp/)
 
 请使用chrome浏览器点击*F12*~    
 
