@@ -540,6 +540,14 @@ $theme-color: #c20c0c;
       justify-content: flex-start;
       flex-direction: column;
       position: relative;
+      border-right: 1px solid #ddd;
+
+      &-child {
+        width: 100%;
+        position: relative;
+        overflow: auto;
+        box-sizing: border-box;
+      }
     }
 
     &-card {
@@ -577,6 +585,34 @@ $theme-color: #c20c0c;
       }
     }
 
+    &-fnlist {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      list-style: none;
+      box-sizing: border-box;
+
+      &-item {
+        margin: 0;
+        padding: 0;
+        height: 50px;
+        width: 100%;
+        display: flex;
+
+        &>img {
+          width: 50px;
+          height: 50px;
+          padding: 15px;
+          box-sizing: border-box;
+        }
+        
+        &>span {
+          line-height: 50px;
+          font-size: 14px;
+        }
+      }
+    }
+
     &-operate {
       position: absolute;
       bottom: 0;
@@ -584,11 +620,39 @@ $theme-color: #c20c0c;
       width: 100%;
       border-top: 1px solid #ddd;
       display: flex;
+      z-index: 5;
+      background-color: #fff;
 
       &>div {
         line-height: 50px;
         width: 100%;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 14px;
+
+        &>img {
+          margin: 15px 5px;
+          width: 20px;
+          height: 20px;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+    &-about {
+      width: 100%;
+      margin: 0;
+      padding: 20px;
+      padding-bottom: 100px;
+
+      box-sizing: border-box;
+
+      &>p {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        font-weight: bold;
       }
     }
   }
