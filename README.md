@@ -28,6 +28,8 @@
 
 ![效果演示](https://github.com/Coyeah/react-musicApp/blob/master/resource/resource_01.gif)
 
+[效果演示]()
+
 ## 关于页面：
 
 - [x] 个人歌单页面
