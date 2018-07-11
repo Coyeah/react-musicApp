@@ -28,7 +28,7 @@
 
 ![效果演示](https://github.com/Coyeah/react-musicApp/blob/master/resource/resource_01.gif)
 
-[效果演示]()
+[效果演示](https://github.com/Coyeah/react-musicApp/blob/master/resource/QR_Code.png)
 
 ## 关于页面：
 
